@@ -18,8 +18,11 @@
 
 const mongoose = require("mongoose");
 
+// const mongoURI =
+//   "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 const mongoURI =
-  "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/e-commerce?retryWrites=true&w=majority";
 
 mongoose
   .connect(mongoURI)
