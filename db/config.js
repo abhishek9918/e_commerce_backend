@@ -5,7 +5,7 @@ const mongoURI =
 
 mongoose
   .connect(mongoURI, {
-    serverSelectionTimeoutMS: 30000, // Keep the extended timeout
+    serverSelectionTimeoutMS: 50000, // Keep the extended timeout
   })
   .then(() => {
     console.log("Successfully connected to MongoDB Atlas");
