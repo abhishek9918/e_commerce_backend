@@ -1,14 +1,10 @@
-// // const mongoose = require("mongoose");
-// // mongoose.connect("mongodb://localhost:27017/e-commerce");
-
 // const mongoose = require("mongoose");
 
-// // Replace the local connection string with the MongoDB Atlas connection string
 // const mongoURI =
-//   "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+//   "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/e-commerce?retryWrites=true&w=majority";
 
 // mongoose
-//   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .connect(mongoURI)
 //   .then(() => {
 //     console.log("Successfully connected to MongoDB Atlas");
 //   })
@@ -18,14 +14,15 @@
 
 const mongoose = require("mongoose");
 
-// const mongoURI =
-//   "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
 const mongoURI =
   "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/e-commerce?retryWrites=true&w=majority";
 
 mongoose
-  .connect(mongoURI)
+  .connect(mongoURI, {
+    useNewUrlParser: true, // Optional, but recommended for MongoDB connection parsing
+    useUnifiedTopology: true, // Helps with the new MongoDB driver's behavior
+    serverSelectionTimeoutMS: 30000, // Increase the timeout to 30 seconds
+  })
   .then(() => {
     console.log("Successfully connected to MongoDB Atlas");
   })
