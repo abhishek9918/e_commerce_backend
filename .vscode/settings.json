@@ -1,0 +1,5 @@
+{
+  "json.format.keepLines": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
+}
