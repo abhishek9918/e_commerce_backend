@@ -1,5 +1,5 @@
-const express = require("express");
 require("./db/config");
+const express = require("express");
 const cors = require("cors");
 const User = require("./db/users");
 const Emp = require("./db/emp");
@@ -253,4 +253,4 @@ function verifyToken(req, resp, next) {
   });
 }
 
-app.listen(1414);
+app.listen(1214);

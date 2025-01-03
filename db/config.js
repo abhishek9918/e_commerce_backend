@@ -1,15 +1,26 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const mongoURI =
-  "mongodb+srv://ojhaabhishek312:dhMhLWQNzRPJtVVz@cluster0.yw6i4.mongodb.net/e-commerce?retryWrites=true&w=majority";
+// const mongoUrl ="mongodb+srv://zabhishekojha7379:RvF4U9036iaADbk0@ecomproject.ufpap.mongodb.net/?retryWrites=true&w=majority&appName=ecomProject";
+
+// mongoose
+//   .connect(mongoUrl)
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((err) => {
+//     console.error("Error connecting to MongoDB:", err.message);
+//   });
+
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const mongoUrl = process.env.MONGO_URI;
 
 mongoose
-  .connect(mongoURI, {
-    serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
-  })
+  .connect(mongoUrl)
   .then(() => {
-    console.log("Successfully connected to MongoDB Atlas");
+    console.log("Connected to MongoDB");
   })
   .catch((err) => {
-    console.error("Error connecting to MongoDB Atlas:", err);
+    console.error("Error connecting to MongoDB:", err.message);
   });
