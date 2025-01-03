@@ -10,6 +10,9 @@ const Result = require("./db/result");
 const Test = require("./db/test");
 const Contact = require("./db/contact");
 
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
+
 const questionsSet = () => {
   const fs = require("fs");
   const data = fs.readFileSync("./Json/questions.json", "utf8");
@@ -20,6 +23,10 @@ const questionsSet = () => {
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("API is working!");
+});
 
 app.post("/sign_up_user", async (req, resp) => {
   try {

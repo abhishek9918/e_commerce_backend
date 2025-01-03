@@ -27,4 +27,5 @@ mongoose
   })
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err.message);
+    setTimeout(connectWithRetry, 5000); // Retry after 5 seconds
   });
