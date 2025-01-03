@@ -11,7 +11,11 @@
 //     console.error("Error connecting to MongoDB:", err.message);
 //   });
 
-const mongoose = require("mongoose");
+const mongoose = require("mongoose", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 require("dotenv").config();
 
 const mongoUrl = process.env.MONGO_URI;

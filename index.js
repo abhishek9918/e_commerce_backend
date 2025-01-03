@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const jwtKey = "e-comm";
 const Questions = require("./db/question");
 const Result = require("./db/result");
+const Test = require("./db/test");
 const Contact = require("./db/contact");
 
 const questionsSet = () => {
@@ -163,6 +164,25 @@ app.post("/final_result", async (req, resp) => {
   const fRes = await res.save();
   resp.send(fRes);
 });
+// app.post("/check_user", async (req, resp) => {
+//   const res = new Test(req.body);
+//   const fRes = await res.save();
+//   resp.send(fRes);
+// });
+
+const newUser = new Test({
+  // password: "securepassword",
+
+  name: "Abhishek",
+  email: "abhi@example.com",
+  phoneNumbers: "1234567890",
+  addresses: "Kathmandu",
+});
+
+newUser
+  .save()
+  .then(() => console.log("User saved!"))
+  .catch((err) => console.error("Error saving user:", err));
 
 app.put("/update_result/:id", async (req, resp) => {
   try {

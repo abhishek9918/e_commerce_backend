@@ -6,6 +6,8 @@ const contactSchema = new mongoose.Schema({
   phoneNumbers: String,
   addresses: String,
   message: String,
+
+  skillArray: [{ skill: String, experience: String, proficiency: String }],
 });
 
-module.exports = mongoose.model("users_contact", contactSchema);
+module.exports = mongoose.model("test_data", contactSchema);
