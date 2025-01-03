@@ -13,8 +13,8 @@
 
 const mongoose = require("mongoose", {
   useNewUrlParser: true,
-  useCreateIndex: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000, // Try a shorter timeout
 });
 require("dotenv").config();
 
